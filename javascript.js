@@ -33,3 +33,21 @@ console.log(operate('-', 5, 3)); // Output: 2
 console.log(operate('*', 5, 3)); // Output: 15
 console.log(operate('/', 5, 3)); // Output: 1.6666666666666667
 console.log(operate('%', 5, 3)); // Output: Invalid operator
+
+// Create a function that populate display when you click numbers. store the display value in a variable somewhere.
+const display = document.querySelector(".display");
+
+//Select all digit buttons
+const digitButtons = document.querySelectorAll(".digit");
+
+// Function to handle digit button clicks
+function handleDigitClick(event) {
+    const digit = event.target.textContent; // Get the digit from the clicked button
+    display.textContent += digit; 
+}
+
+// Add event listener for digit buttons
+digitButtons.forEach(button => {
+    button.addEventListener("click", handleDigitClick);
+});
+
